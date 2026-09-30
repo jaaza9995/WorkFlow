@@ -1,0 +1,39 @@
+services:
+  postgres:
+    image: postgres:18
+    container_name: mypostgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: "1234"
+      POSTGRES_DB: workflow
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/18/docker
+    networks:
+      - workflow_network
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: mypgadmin
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: jara12.m@hotmatil.com
+      PGADMIN_DEFAULT_PASSWORD: "1234"
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    depends_on:
+      - postgres
+    networks:
+      - workflow_network
+
+networks:
+  workflow_network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  pgadmin_data:
