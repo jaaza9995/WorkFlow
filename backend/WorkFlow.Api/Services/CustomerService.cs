@@ -1,46 +1,45 @@
-using System.Security.Cryptography.X509Certificates;
 using Microsoft.EntityFrameworkCore;
 using WorkFlow.Api.Data;
-using WorkFlow.Api.DTOs.Customer;
+using WorkFlow.Api.DTOs.Customers;
 using WorkFlow.Api.Models;
 
 namespace WorkFlow.Api.Services;
 
 public class CustomerService
 {
-    private readonly AppContext _context;
+    private readonly AppDbContext _context;
 
-    public CustomerService(AppContext context)
+    public CustomerService(AppDbContext context)
     {
         _context = context;
     }
 
     public async Task<List<CustomerDto>> GetAllAsync()
     {
-        return await _context.Customer
-        .Select(c => new CustomerDto
-        {
-            Id = c.Id,
-            FirstName = c.FirstName,
-            LastName = c.LastName,
-            Email = c.Email,
-            Phone = c.Phone
-        })
-        .ToListAsync();
+        return await _context.Customers
+            .Select(c => new CustomerDto
+            {
+                Id = c.Id,
+                Name = c.Name,
+                Email = c.Email,
+                Phone = c.Phone,
+                CompanyId = c.CompanyId
+            })
+            .ToListAsync();
     }
 
     public async Task<CustomerDto?> GetByIdAsync(int id)
     {
-        var customer = await _context.Customer.FindAsync(id);
+        var customer = await _context.Customers.FindAsync(id);
         if (customer is null) return null;
 
         return new CustomerDto
         {
             Id = customer.Id,
-            FirstName = customer.FirstName,
-            LastName = customer.LastName,
+            Name = customer.Name,
             Email = customer.Email,
-            Phone = customer.Phone
+            Phone = customer.Phone,
+            CompanyId = customer.CompanyId
         };
     }
 
@@ -48,43 +47,44 @@ public class CustomerService
     {
         var customer = new Customer
         {
-            FirstName = dto.FirstName,
-            LastName = dto.LastName,
+            Name = dto.Name,
             Email = dto.Email,
             Phone = dto.Phone,
+            CompanyId = dto.CompanyId
         };
-        
-        _context.Customer.Add(customer);
+
+        _context.Customers.Add(customer);
         await _context.SaveChangesAsync();
 
         return new CustomerDto
         {
             Id = customer.Id,
-            FirstName = customer.FirstName,
-            LastName = customer.LastName,
+            Name = customer.Name,
             Email = customer.Email,
             Phone = customer.Phone,
+            CompanyId = customer.CompanyId
         };
     }
-    public async Task<bool> UpdateAsync(int id, UpdateCustomer dto)
+
+    public async Task<bool> UpdateAsync(int id, UpdateCustomerDto dto)
     {
-        var customer = await _context.Customer.FindAsync(id);
+        var customer = await _context.Customers.FindAsync(id);
         if (customer is null) return false;
 
-        customer.FirstName = dto.Name;
-        customer.LastName = dto.LastName;
+        customer.Name = dto.Name;
+        customer.Email = dto.Email;
+        customer.Phone = dto.Phone;
         await _context.SaveChangesAsync();
         return true;
     }
 
     public async Task<bool> DeleteAsync(int id)
     {
-        var customer = await _context.Customer.FindAsync(id);
+        var customer = await _context.Customers.FindAsync(id);
         if (customer is null) return false;
 
-        _context.Customer.Remove(customer);
+        _context.Customers.Remove(customer);
         await _context.SaveChangesAsync();
         return true;
     }
-
 }
