@@ -6,7 +6,7 @@ using WorkFlow.Api.Services;
 namespace WorkFlow.Api.Controllers;
 
 [ApiController]
-[ResourceConsumption("api/[Controller]")]
+[Route("api/[Controller]")]
 
 public class CustomersController : ControllerBase
 {
