@@ -124,3 +124,4 @@
 /Users/jaraazad/WorkFlow/backend/WorkFlow.Api/bin/Debug/net10.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /Users/jaraazad/WorkFlow/backend/WorkFlow.Api/bin/Debug/net10.0/Swashbuckle.AspNetCore.SwaggerUI.dll
 /Users/jaraazad/WorkFlow/backend/WorkFlow.Api/obj/Debug/net10.0/WorkFlow.Api.sourcelink.json
+/Users/jaraazad/WorkFlow/backend/WorkFlow.Api/bin/Debug/net10.0/BCrypt-Net-Next.dll

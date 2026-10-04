@@ -8,6 +8,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<CompanyService>();
+builder.Services.AddScoped<CustomerService>();
+builder.Services.AddScoped<UserService>();
 
 // Add services to the container.
 
