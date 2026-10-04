@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using WorkFlow.Api.DTOs.Users;
+using WorkFlow.Api.DTOs.User;
 using WorkFlow.Api.Services;
 
 namespace WorkFlow.Api.Controllers;

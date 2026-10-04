@@ -1,6 +1,6 @@
 using WorkFlow.Api.Models;
 
-namespace WorkFlow.Api.DTOs.Users;
+namespace WorkFlow.Api.DTOs.User;
 
 public class UserDto
 {

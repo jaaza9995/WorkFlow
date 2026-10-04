@@ -125,3 +125,12 @@
 /Users/jaraazad/WorkFlow/backend/WorkFlow.Api/bin/Debug/net10.0/Swashbuckle.AspNetCore.SwaggerUI.dll
 /Users/jaraazad/WorkFlow/backend/WorkFlow.Api/obj/Debug/net10.0/WorkFlow.Api.sourcelink.json
 /Users/jaraazad/WorkFlow/backend/WorkFlow.Api/bin/Debug/net10.0/BCrypt-Net-Next.dll
+/Users/jaraazad/WorkFlow/backend/WorkFlow.Api/bin/Debug/net10.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/jaraazad/WorkFlow/backend/WorkFlow.Api/bin/Debug/net10.0/Microsoft.Bcl.Cryptography.dll
+/Users/jaraazad/WorkFlow/backend/WorkFlow.Api/bin/Debug/net10.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/jaraazad/WorkFlow/backend/WorkFlow.Api/bin/Debug/net10.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/jaraazad/WorkFlow/backend/WorkFlow.Api/bin/Debug/net10.0/Microsoft.IdentityModel.Logging.dll
+/Users/jaraazad/WorkFlow/backend/WorkFlow.Api/bin/Debug/net10.0/Microsoft.IdentityModel.Protocols.dll
+/Users/jaraazad/WorkFlow/backend/WorkFlow.Api/bin/Debug/net10.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/jaraazad/WorkFlow/backend/WorkFlow.Api/bin/Debug/net10.0/Microsoft.IdentityModel.Tokens.dll
+/Users/jaraazad/WorkFlow/backend/WorkFlow.Api/bin/Debug/net10.0/System.IdentityModel.Tokens.Jwt.dll

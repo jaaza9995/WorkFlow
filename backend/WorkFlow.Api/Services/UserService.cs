@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using WorkFlow.Api.Data;
-using WorkFlow.Api.DTOs.Users;
+using WorkFlow.Api.DTOs.User;
 using WorkFlow.Api.Models;
 
 namespace WorkFlow.Api.Services;
